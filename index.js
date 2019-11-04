@@ -1,4 +1,3 @@
-const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-03/sparql";
 const query = `
     PREFIX dc: <http://purl.org/dc/elements/1.1/>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -16,14 +15,14 @@ const query = `
         ?subSubCatName
         ?subSubSubCatName
         ?type
-    
+
     WHERE {
         <https://hdl.handle.net/20.500.11840/termmaster2704> skos:* ?cat .
         ?obj edm:isRelatedTo ?cat .
         ?cat skos:narrower ?subCat .
         ?subCat	skos:narrower ?subSubCat .
         ?subSubCat skos:narrower ?subSubSubCat .
-    
+
         ?obj dc:title ?title .
         ?obj dct:spatial ?origin .
         ?origin skos:broader ?continent .
@@ -34,10 +33,12 @@ const query = `
         ?subCat skos:prefLabel ?subCatName .
         ?subSubCat skos:prefLabel ?subSubCatName .
         ?subSubSubCat skos:prefLabel ?subSubSubCatName .
-    
-    
+
+
     } LIMIT 100
-`
+    `
+const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-03/sparql";
+
 runQuery(url, query);
 function runQuery(url, query){
     fetch(url+'?query='+ encodeURIComponent(query) +'&format=json') // Get data from API with my query
