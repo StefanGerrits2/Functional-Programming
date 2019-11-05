@@ -1,3 +1,12 @@
+const express = require('express')
+const fetch = require("node-fetch");
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => console.log(results))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
 const query = `
     PREFIX dc: <http://purl.org/dc/elements/1.1/>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

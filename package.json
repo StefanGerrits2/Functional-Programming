@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/StefanGerrits2/Functional-Programming#readme",
   "dependencies": {
-   
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.4"
   }
 }
