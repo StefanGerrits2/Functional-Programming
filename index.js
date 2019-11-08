@@ -13,14 +13,14 @@ const query = `
     ?category skos:prefLabel ?categoryName .
     ?obj edm:isRelatedTo ?category .
     
-    } LIMIT 200
+    } LIMIT 100
     `
 const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-03/sparql";
 
 /* IIFI */
 (async () => {
-    let myResults = await runQuery(url, query);
-    console.log(cleanData(myResults))
+    let myRawResults = await runQuery(url, query);
+    console.log(cleanData(myRawResults))
 })();
 
 async function runQuery(url, query){
@@ -30,14 +30,14 @@ async function runQuery(url, query){
 }
 
 function cleanData(results) {
-    return results.reduce((cleanResults, results) => {
-        let pairs = [];
-        for(let key in results) {
-            let string = results[key].value;
-            let stringWithoutFirsLetter = string.slice(0);
-            let upperCased = string.charAt(0).toUpperCase() + stringWithoutFirsLetter.slice(1);
-            cleanResults.push(upperCased);
-        }
-        return cleanResults;
-    },[])
-} 
+    for(let key in results) { // Loop over every value
+        let stringWithoutFirsLetter = results[key].categoryName.value.slice(0); // Get everything except first letter
+        results[key].categoryName.value = results[key].categoryName.value.charAt(0).toUpperCase() + stringWithoutFirsLetter.slice(1); // String will be first letter in uppercase + the remaining string
+        results[key].categoryAmount.value = parseInt(results[key].categoryAmount.value); // The number in every string will be converted into a number
+        // Delete unneeded properties from object
+        delete results[key].categoryAmount.type
+        delete results[key].categoryAmount.datatype
+        delete results[key].categoryName.type
+    }
+    return results; // Return results
+}
