@@ -17,7 +17,7 @@ const query = `
     `
 const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-03/sparql";
 
-/* IIFI */
+// IIFI
 (async () => {
     let myRawResults = await runQuery(url, query);
     console.log(cleanData(myRawResults))
