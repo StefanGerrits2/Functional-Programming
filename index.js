@@ -31,8 +31,7 @@ async function runQuery(url, query){
 
 function cleanData(results) {
     for(let key in results) { // Loop over every value
-        let stringWithoutFirsLetter = results[key].categoryName.value.slice(0); // Get everything except first letter
-        results[key].categoryName.value = results[key].categoryName.value.charAt(0).toUpperCase() + stringWithoutFirsLetter.slice(1); // String will be first letter in uppercase + the remaining string
+        results[key].categoryName.value = results[key].categoryName.value.charAt(0).toUpperCase() + results[key].categoryName.value.slice(1); // Change first character to uppercase + full string except first character
         results[key].categoryAmount.value = parseInt(results[key].categoryAmount.value); // The number in every string will be converted into a number
         // Delete unneeded properties from object
         delete results[key].categoryAmount.type
