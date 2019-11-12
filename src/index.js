@@ -52,3 +52,16 @@ function fixCategory(data) {
     }
     return data
 }
+
+const svg = d3.selectAll("svg"); // Select svg element
+const fakeData = [{x: 10, y: 10, r: 6}, {x: 70, y: 10, r:8}, {x: 150, y: 10, r: 10}]; // Create fake data
+
+svg.selectAll("circle") // Select circle element
+    .data(fakeData) // Load in data
+    .enter() // Add new elements
+    .append("circle") // Create circle elements
+        // Pass data into every circle element
+        .attr("cx", d => d.x) // x amount (pixels to the right)
+        .attr("cy", d => d.y) // y amount (pixels to bottom)
+        .attr("r", d => d.r) // radius amount (size circle)
+        .attr("fill", "blue") // fill with color blue
