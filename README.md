@@ -7,13 +7,15 @@
 
 ## Description
 
-Description
+I made a bubble chart which contains every category relating to clothes. This visualisation is made with D3. Every bubble belongs to a group which have their own color. There's also a legend which tells you what the colors mean.
 
 [Click here](https://github.com/StefanGerrits2/functional-programming/wiki/1.2-Concept) to check out my concept in detail.
 
 ## Features
 
-* Features here
+* Getting all data from API
+* Cleaning and transforming data
+* Showing all data in a bubble chart made with D3.
 
 ## Installation
 
@@ -34,17 +36,33 @@ The data I use is provided by [this API](https://data.netwerkdigitaalerfgoed.nl/
 More info what I collect here
 
 <details>
-<summary>Click here to see a quick example of a query I have written in SPARQL to get all dolls from the API</summary>
+<summary>Click here to see a quick example of a query I have written in SPARQL to get all clothing categories from the API</summary>
 <br>
 
-    Query here
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+    SELECT ?categoryName (COUNT(?category) AS ?categoryAmount) ?upperCategory
+
+    WHERE {
+    <https://hdl.handle.net/20.500.11840/termmaster2704> skos:narrower* ?category .
+    ?category skos:prefLabel ?categoryName .
+    ?obj edm:isRelatedTo ?category .
+    ?category skos:broader ?categoryGroup .
+    ?categoryGroup skos:prefLabel ?upperCategory .
+    } 
+    LIMIT 100
 
 </details>
 
 ## Sources
 
 * [API](https://data.netwerkdigitaalerfgoed.nl/) - To get all the data I needed.
-* More sources here
+* [D3](https://d3js.org/) - To learn D3 and use examples.
 
 ## Credits
 
