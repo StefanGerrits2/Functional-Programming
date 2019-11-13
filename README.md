@@ -1,6 +1,6 @@
 # Collection clothing and personal decoration
 
-![concept img1_1](https://user-images.githubusercontent.com/45566396/68799889-4b18e480-0659-11ea-8623-079da50b72c5.png)
+![concept img1_3](https://user-images.githubusercontent.com/45566396/68800197-f0cc5380-0659-11ea-8df1-b6eb8917240c.png)
 
 ## Description
 
