@@ -21,12 +21,12 @@ const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/servic
 
 runQuery(url, query) // Run main function
     .then(myRawResults => cleanData(myRawResults)) // When data is obtained, pass data into a new function
-    .then(data => fixCategory(data))
-    .then(data2 => {
-        drawCircles(data2)
+    .then(cleanedData => fixCategory(cleanedData))
+    .then(finalData => {
+        console.log(finalData)
+        drawCircles(finalData)
     })
    
-
 async function runQuery(url, query){
     let response = await fetch(url+'?query='+ encodeURIComponent(query) +'&format=json'); // Fetch data into response
     let json = await response.json(); // When the data is obtained, change it to JSON
@@ -86,7 +86,8 @@ function drawCircles(data) {
     leaf.append("text")
         .attr("x", 0)
         .attr("y", (d, i, nodes) => `${i - nodes.length / 2 + 0.8}em`)
-        .text(d => d.data.categoryName);
+        .text(d => d.data.categoryName)
+        .attr("fill","#EEEEEE")
     leaf.append("title")
         .text(d => `${d.data.categoryName}\n${format(d.data.categoryAmount)}`);
         

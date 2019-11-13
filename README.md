@@ -1,13 +1,10 @@
-# Functional Programming
+# Collection clothing and personal decoration
 
-### Pic 1
-
-### Pic 2
-
+![concept img1_1](https://user-images.githubusercontent.com/45566396/68799889-4b18e480-0659-11ea-8623-079da50b72c5.png)
 
 ## Description
 
-Description
+Description here
 
 [Click here](https://github.com/StefanGerrits2/functional-programming/wiki/1.2-Concept) to check out my concept in detail.
 

@@ -1,7 +1,9 @@
-h1 {
-    color: black;
+body > * {
+    color: white;
 }
 
-g {
- display: flex;
+
+
+body {
+    background-color: #151144;
 }
