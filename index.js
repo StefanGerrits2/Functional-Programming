@@ -23,14 +23,14 @@ const query = `
     `
 const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-03/sparql";
 
-runQuery(url, query) // Run main function
+runQuery(url, query) // Run function to fetch data
     .then(myRawResults => cleanData(myRawResults)) // When data is obtained, pass data into a new function
     .then(cleanedData => fixCategory(cleanedData))
     .then(finalData => {
         console.log(finalData)
         drawCircles(finalData)
     })
-   
+
 async function runQuery(url, query){
     let response = await fetch(url+'?query='+ encodeURIComponent(query) +'&format=json'); // Fetch data into response
     let json = await response.json(); // When the data is obtained, change it to JSON

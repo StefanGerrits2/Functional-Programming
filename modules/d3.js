@@ -1,3 +1,4 @@
+// I used this example for my following code: https://observablehq.com/@d3/bubble-chart
 export default function drawCircles(data) {
     const width = '932';
     const height = '932';

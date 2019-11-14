@@ -12,7 +12,19 @@ I made a bubble chart which contains every category relating to clothes. This vi
 
 * Getting all data from API
 * Cleaning and transforming data
-* Showing all data in a bubble chart made with D3.
+* Showing all data in a bubble chart made with d3.
+
+## Functional Programming
+I wrote multiple functions that do their own things no matter what the input is. The output will always be the same. When data went through a function, I can pass this data to another function. This way it's easier to debug and it will be easy to re-use functions if you need to.
+
+Click [here](https://github.com/StefanGerrits2/functional-programming/wiki/2.1-Functional-programming) for a more detailed explanation about what functional programming is and to see how I used functional programming in my project.
+
+## Data cleaning pattern
+Click [here](https://github.com/StefanGerrits2/functional-programming/wiki/2.3-Data-cleaning-pattern) to check out my cleaning pattern in full detail
+
+## Data transformation
+
+Click [here](https://github.com/StefanGerrits2/functional-programming/wiki/2.2-Transformeren-en-opschonen-van-data) to check out how I transformed my data so I can use it with d3 to render a bubble chart.
 
 ## Installation
 
@@ -23,17 +35,24 @@ Run this command in your terminal:
 ### 2. Navigate into the root of the folder
 Run this command in your terminal:
 
-### 5. Viewing the website
-Open your the index.html file in chrome
+`cd Functional-Programming`
+
+### 3. Viewing the website
+Open the `index.html` file in a browser.
 
 ## API
 
 The data I use is provided by [this API](https://data.netwerkdigitaalerfgoed.nl/). The API contains 700.000 objects. I have written SPARQL queries to get the objects that I want. 
 
-More info what I collect here
+I collect these data:
+* Category names
+* Category value (amount of objects in each category)
+* Upper category (subcategories can be part of a upper category)
+
+Click [here](https://github.com/StefanGerrits2/functional-programming/wiki/2.4-SparQL-Query) for further explanation how my query works.
 
 <details>
-<summary>Click here to see a quick example of a query I have written in SPARQL to get all clothing categories from the API</summary>
+<summary>Click here to see a quick example of a query I have written in SPARQL to get all clothing and personal decoration categories from the API</summary>
 <br>
 
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -59,15 +78,16 @@ More info what I collect here
 ## Sources
 
 * [API](https://data.netwerkdigitaalerfgoed.nl/) - To get all the data I needed.
-* [D3](https://d3js.org/) - To learn D3 and use examples.
+* [d3](https://d3js.org/) - To learn the basics of d3.
+* [Bubble chart](https://observablehq.com/@d3/bubble-chart) - Example I used to render a bubble chart.
 
 ## Credits
 
-* Credits here
+* [Thijs Spijker](https://github.com/iSirThijs) - He helped me setup my `.then` chain so I can pass data from a function to one another.
 
 ## Check it out!
 
-* Live link here
+* [Click here to open the live link](https://stefangerrits2.github.io/functional-programming/)
 
 ## License
 
