@@ -1,6 +1,6 @@
 import cleanData from './modules/cleanData.js'
 import fixCategory from './modules/fixCategory.js'
-import drawCircles from './modules/d3.js'
+import drawCircles from './modules/drawCircles.js'
 
 const query = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
