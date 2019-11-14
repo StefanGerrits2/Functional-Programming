@@ -6,7 +6,7 @@
 
 I made a bubble chart which contains every category relating to clothes. This visualisation is made with D3. Every bubble belongs to a group which have their own color. There's also a legend which tells you what the colors mean.
 
-[Click here](https://github.com/StefanGerrits2/functional-programming/wiki/1.2-Concept) to check out my concept in detail.
+[Click here](https://github.com/StefanGerrits2/functional-programming/wiki/1.2-Gekozen-concept) to check out my concept in detail.
 
 ## Features
 
