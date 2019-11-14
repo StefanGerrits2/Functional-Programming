@@ -1,9 +1,6 @@
-# Functional Programming
+# Collection clothing and personal decoration
 
-### Pic 1
-
-### Pic 2
-
+![concept img1_3](https://user-images.githubusercontent.com/45566396/68800197-f0cc5380-0659-11ea-8df1-b6eb8917240c.png)
 
 ## Description
 
